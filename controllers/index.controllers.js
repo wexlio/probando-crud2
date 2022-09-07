@@ -14,7 +14,7 @@ export async function createNewProduct (req, res){
     
     const { title, price } = req.body;
 
-    console.log(req.files)
+    console.log(req.files) //error not fpund trow undefined
 
     const product = new Product ({
         title, 
