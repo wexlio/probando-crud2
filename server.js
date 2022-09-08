@@ -3,6 +3,7 @@ import {engine} from 'express-handlebars';
 import path from "path";
 import {router} from "./routes/routes.js"
 import morgan from "morgan"
+import expressFile from "express-fileupload"
 
 
 //Initializations
@@ -25,7 +26,12 @@ app.set('view engine', '.hbs');
 //Middlewares
 app.use(express.json())
 app.use(express.urlencoded({extended: false}));
-app.use(morgan("dev"))
+app.use(morgan("dev"));
+
+app.use(fileUpload({
+  useTempFiles : true,
+  tempFileDir : '/public/uploads'
+}));
 
 //Global variables
 
