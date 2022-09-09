@@ -1,0 +1,36 @@
+<div class="text-center container pb-5">
+    <h1>Edit Productest</h1>
+</div>
+ 
+<form action="/products/edit/{{products._id}}?_method=PUT" method="POST" enctype="multipart/form-data">
+<input type="hidden" name="_method" value="PUT">
+    <div class="col-md-6 container">
+        <div class="container m-auto">
+
+            <div class="form-row">
+
+                <div class="col-md-12 mb-3">
+                    <label for="validationServer02">Title</label>
+                    <input type="text" class="form-control" id="validationServer02" placeholder="Nuevo nombre del producto aquí..." value="{{products.title}}" name="title" required>
+                </div>
+
+                <div class="col-md-12 mb-3">
+                    <label for="validationServer02">Price</label>
+                    <input type="text" class="form-control" id="validationServer02" placeholder="Nuevo precio del producto aquí..." value="{{products.price}}" name="price">
+                </div>
+
+                {{!-- <div class="input-group mt-3">
+                    <label for="validationServer02">Upload Image</label>
+                    <div class="custom-file">
+                    <input type="file" name="image" class="custom-file-input" id="inputGroupFile05">
+                    <label for="inputGroupFile05" class="custom-file-label ml-2 mr-2">Click aquí para elegir archivo</label>
+                    </div>
+                </div> --}}
+
+            </div>
+            
+                <button class="btn btn-primary mt-3" type="submit">Update product</button>
+
+        </div>
+    </div>
+</form>

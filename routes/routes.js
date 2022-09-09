@@ -1,5 +1,6 @@
 import { Router } from "express";
 import { renderProdutForm, createNewProduct, renderProducts, renderEditForm, updateProduct,deleteProducts } from "../controllers/index.controllers.js";
+import methodOverride from "method-override"
 
 const router = Router();
 
@@ -12,16 +13,18 @@ router.get("/products/add", renderProdutForm)
 
 router.post("/products/add", createNewProduct)
 
-//all products
+//get all product(s)
 router.get("/products", renderProducts)
 
+router.get("/products/add/:id", renderProdutForm)
+
 //edit products
-router.get("/products/edit:id", renderEditForm)
+router.get("/products/edit/:id", renderEditForm)
 
 router.put("/products/edit/:id", updateProduct)
 
 //delete products
-router.delete("products/delete/:id", deleteProducts)
+router.delete("/products/delete/:id", deleteProducts)
 
 export { router }
 

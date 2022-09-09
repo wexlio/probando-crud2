@@ -1,8 +1,10 @@
 
 import Product from "../models/product.model.js"
-// import {uploadImage, deleteImage} from "../utils/cloudinary.js"
+import {uploadImage, deleteImage} from "../utils/cloudinary.js"
 import fs from "fs-extra"
 // import {v2 as cloudinary} from "../utils/cloudinary.js"
+import methodOverride from "method-override"
+
 
 //new products
 export function renderProdutForm (req, res){
@@ -14,18 +16,32 @@ export async function createNewProduct (req, res){
     
     const { title, price } = req.body;
 
-    console.log(req.files) //error not fpund trow undefined
+    console.log(req.files) 
 
-    const product = new Product ({
+    console.log(req.body)
+
+    const products = new Product ({
         title, 
         price,
     })
 
-    
+    if (req.files?.image) {
+        const uploadCloudinary = await uploadImage(req.files.image.tempFilePath)
 
-    await product.save();
+        products.image = {
+            public_id: uploadCloudinary.public_id,
+            secure_url: uploadCloudinary.secure_url
+        }
 
-    res.send("creating products")
+        await fs.unlink(req.files.image.tempFilePath)
+
+    }
+
+    await products.save();
+
+    console.log(products.image.secure_url)
+
+    res.redirect("/products")
 }
 
 //all products
@@ -37,20 +53,35 @@ export async function renderProducts (req, res){
 }
 
 //update products
-export function renderEditForm (req, res){
-    // res.render("form_and_products")
-    res.send("updating products")
+export async function renderEditForm (req, res){
+    const products = await Product.findById(req.params.id).lean()
+    console.log(products.image)
+    console.log(products)
+    res.render("edit_form", {products})
 }
 
-export function updateProduct (req, res){
-    // res.render("form_and_products")
-    res.send("updating products")
+export async function updateProduct (req, res){
+    const {id} = req.params
+    const productUpdating = await Product.findByIdAndUpdate(id, req.body, {
+      new: true
+    })
+    console.log(productUpdating)  
+    // console.log(req.body)
+    // console.log(id)
+    res.redirect("/products")
 }
 
 //delete products
-export function deleteProducts (req, res){
-    // res.render("Home")
-    res.send("deleting products")
+export async function deleteProducts (req, res){
+    console.log(req.params)
+    // Product.findByIdAndDelete(req.params.id)
+
+    const eraser = await Product.findByIdAndDelete(req.params.id)
+    const result = await deleteImage(eraser.image.public_id)
+    
+    console.log(result)
+
+    res.redirect("/products")
 }
 
 
