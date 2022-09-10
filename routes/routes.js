@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { renderProdutForm, createNewProduct, renderProducts, renderEditForm, updateProduct,deleteProducts } from "../controllers/index.controllers.js";
+import { renderProdutForm, createNewProduct, renderProducts, renderEditForm, updateProduct,deleteProducts, renderJsonProducts } from "../controllers/index.controllers.js";
 import methodOverride from "method-override"
 
 const router = Router();
@@ -15,6 +15,8 @@ router.post("/products/add", createNewProduct)
 
 //get all product(s)
 router.get("/products", renderProducts)
+
+router.get("/api", renderJsonProducts)
 
 router.get("/products/add/:id", renderProdutForm)
 
