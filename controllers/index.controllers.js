@@ -82,6 +82,7 @@ export async function renderProducts (req, res){
         // res.render("home")
         // res.send("showing products")
         const product = await Product.find().lean();
+        
         res.render("Home", {product})
         
     } catch (error) {

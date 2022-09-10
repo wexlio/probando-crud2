@@ -5,6 +5,7 @@ import {router} from "./routes/routes.js"
 import morgan from "morgan"
 import fileUpload from "express-fileupload"
 import methodOverride from "method-override"
+import cors from "cors"
 
 
 //Initializations
@@ -25,6 +26,7 @@ app.engine('.hbs', engine({
 app.set('view engine', '.hbs');
 
 //Middlewares
+app.use(cors())
 app.use(express.json())
 app.use(express.urlencoded({extended: false}));
 app.use(methodOverride('_method'))

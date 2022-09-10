@@ -7,6 +7,7 @@
   <thead>
     <tr class="bg-success">
       {{!-- <th class="text-center" scope="col">#</th> --}}
+      <th class="text-center" scope="col">#</th>
       <th class="text-center" scope="col">Title</th>
       <th class="text-center" scope="col">Price</th>
       <th class="text-center" scope="col">Actions</th>
@@ -16,7 +17,10 @@
     {{#each product}}
     <tr>
       {{!-- <th class="text-center" scope="row">{{length}}</th> --}}
-      <td class="text-left">{{title}}</td>
+
+      
+      <td class="text-center">{{@index}}</td>
+      <td class="text-center">{{title}}</td>
       <td class="text-center">{{price}}</td>
       <td class="text-center">
 

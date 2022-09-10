@@ -4,9 +4,7 @@ import methodOverride from "method-override"
 
 const router = Router();
 
-router.get("/", (req, res) => {
-    res.render("Home");
-})
+router.get("/", renderProducts)
 
 //new products
 router.get("/products/add", renderProdutForm)
