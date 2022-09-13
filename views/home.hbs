@@ -3,14 +3,32 @@
 </div>
 
 
-<table class="table">
+<table class="table table-bordered border-primary">
   <thead>
     <tr class="bg-success">
       {{!-- <th class="text-center" scope="col">#</th> --}}
       <th class="text-center" scope="col">#</th>
-      <th class="text-center" scope="col">Title</th>
-      <th class="text-center" scope="col">Price</th>
-      <th class="text-center" scope="col">Actions</th>
+      <th class="text-center" scope="col">Categoria</th>
+      <th class="text-center" scope="col">Nombre</th>
+      <th class="text-center" scope="col">Precio</th>
+      <th class="text-center" scope="col">Imagen1</th>
+      <th class="text-center" scope="col">Imagen2</th>
+      <th class="text-center" scope="col">Imagen3</th>
+      <th class="text-center" scope="col">Imagen4</th>
+      <th class="text-center" scope="col">Imagen5</th>
+      <th class="text-center" scope="col">Descuento</th>
+      <th class="text-center" scope="col">Descripcion1</th>
+      <th class="text-center" scope="col">ImgDescripcion1</th>
+      <th class="text-center" scope="col">Descripcion2</th>
+      <th class="text-center" scope="col">ImgDescripcion2</th>
+      <th class="text-center" scope="col">Descripcion3</th>
+      <th class="text-center" scope="col">ImgDescripcion3</th>
+      <th class="text-center" scope="col">Descripcion4</th>
+      <th class="text-center" scope="col">ImgDescripcion4</th>
+      <th class="text-center" scope="col">Descripcion5</th>
+      <th class="text-center" scope="col">ImgDescripcion5</th>
+      <th class="text-center" scope="col">Edit / Delete</th>
+
     </tr>
   </thead>
   <tbody>
@@ -20,30 +38,155 @@
 
       
       <td class="text-center">{{@index}}</td>
-      <td class="text-center">{{title}}</td>
-      <td class="text-center">{{price}}</td>
+      <td class="text-center">{{categoria}}</td>
+      <td class="text-center">{{nombre}}</td>
+      <td class="text-center">{{precio}}</td>
       <td class="text-center">
 
-      <div class="d-flex justify-content-center"> 
-         
-        {{!-- <form action="/products/edit/{{_id}}?_method=PUT" method="POST">
-          <input type="hidden" name="_method" value="PUT">
-          <button type="submit" class="btn btn-primary mr-2">Edit</button>
-        </form> --}}
+        <div class="d-flex justify-content-center"> 
+          
+          <div class="mr-2">  
+            <a href="/products/edit/img/{{_id}}" type="button" class="btn btn-primary">Edit<a>
+          </div>
 
-        <div class="mr-2">  
-          <a href="/products/edit/{{_id}}" type="button" class="btn btn-primary">Edit<a>
+          <a href="{{imagen1.secure_url}}" target="_BLANK" type="button" class="btn btn-success mr-2">View Img1</a>
+
         </div>
+      </td>
+      <td class="text-center">
+        
+        <div class="d-flex justify-content-center"> 
+          <div class="mr-2">  
+            <a href="/products/edit/{{_id}}" type="button" class="btn btn-primary">Edit<a>
+          </div>
 
-        <a href="{{image.secure_url}}" target="_BLANK" type="button" class="btn btn-success mr-2">View Img</a>
+          <a href="{{imagen2.secure_url}}" target="_BLANK" type="button" class="btn btn-success mr-2">View Img2</a>
 
-       <form method="POST" action="/products/delete/{{_id}}?_method=DELETE">
-          <input type="hidden" name="_method" value="DELETE">
-          <button type="submit" class="btn btn-danger mr-2">Delete</button>
-        </form>
-      </div>  
+        </div>  
+          
+      </td>  
+      <td class="text-center">
+        <div class="d-flex justify-content-center"> 
+          
+          <div class="mr-2">  
+            <a href="/products/edit/{{_id}}" type="button" class="btn btn-primary">Edit<a>
+          </div>
+
+          <a href="{{imagen3.secure_url}}" target="_BLANK" type="button" class="btn btn-success mr-2">View Img3</a>
+
+        </div>  
+      </td>
+      <td class="text-center">
+        <div class="d-flex justify-content-center"> 
+          
+          <div class="mr-2">  
+            <a href="/products/edit/{{_id}}" type="button" class="btn btn-primary">Edit<a>
+          </div>
+
+          <a href="{{imagen4.secure_url}}" target="_BLANK" type="button" class="btn btn-success mr-2">View Img4</a>
+
+        </div>  
 
       </td>
+      <td class="text-center">
+        <div class="d-flex justify-content-center"> 
+          
+          <div class="mr-2">  
+            <a href="/products/edit/{{_id}}" type="button" class="btn btn-primary">Edit<a>
+          </div>
+
+          <a href="{{imagen5.secure_url}}" target="_BLANK" type="button" class="btn btn-success mr-2">View Img5</a>
+
+        </div>  
+
+      </td>
+
+      <td class="text-center">{{descuento}}</td>
+
+
+      <td class="text-center">{{descripcion1}}</td>
+      <td class="text-center">
+        <div class="d-flex justify-content-center"> 
+          
+          <div class="mr-2">  
+            <a href="/products/edit/{{_id}}" type="button" class="btn btn-primary">Edit<a>
+          </div>
+
+          <a href="{{imgDescripcion1.secure_url}}" target="_BLANK" type="button" class="btn btn-success mr-2">View ImgDescripcion1</a>
+
+        </div>
+
+      </td>
+      <td class="text-center">{{descripcion2}}</td>
+      <td class="text-center">
+        <div class="d-flex justify-content-center"> 
+          
+          <div class="mr-2">  
+            <a href="/products/edit/{{_id}}" type="button" class="btn btn-primary">Edit<a>
+          </div>
+
+          <a href="{{imgDescripcion2.secure_url}}" target="_BLANK" type="button" class="btn btn-success mr-2">View ImgDescripcion2</a>
+
+        </div>
+
+      </td>
+
+      
+      <td class="text-center">{{descripcion3}}</td>
+      <td class="text-center">
+        <div class="d-flex justify-content-center"> 
+          
+          <div class="mr-2">  
+            <a href="/products/edit/{{_id}}" type="button" class="btn btn-primary">Edit<a>
+          </div>
+
+          <a href="{{imgDescripcion3.secure_url}}" target="_BLANK" type="button" class="btn btn-success mr-2">View ImgDescripcion3</a>
+
+        </div>
+
+      </td>
+      <td class="text-center">{{descripcion4}}</td>
+      <td class="text-center">
+        <div class="d-flex justify-content-center"> 
+          
+          <div class="mr-2">  
+            <a href="/products/edit/{{_id}}" type="button" class="btn btn-primary">Edit<a>
+          </div>
+
+          <a href="{{imgDescripcion4.secure_url}}" target="_BLANK" type="button" class="btn btn-success mr-2">View ImgDescripcion4</a>
+
+        </div>
+
+      </td>
+      <td class="text-center">{{descripcion5}}</td>
+      <td class="text-center">
+        <div class="d-flex justify-content-center"> 
+          
+          <div class="mr-2">  
+            <a href="/products/edit/{{_id}}" type="button" class="btn btn-primary">Edit<a>
+          </div>
+
+          <a href="{{imgDescripcion5.secure_url}}" target="_BLANK" type="button" class="btn btn-success mr-2">View ImgDescripcion5</a>
+
+        </div>
+
+      </td>
+
+      <td>
+        <div class="mr-2 d-flex justify-content-center">
+          <div class="mr-2 d-flex justify-content-center">  
+              <a href="/products/edit/{{_id}}" type="button" class="btn btn-primary">Edit Productest<a>
+            </div>
+          <form method="POST" action="/products/delete/{{_id}}?_method=DELETE">
+                <input type="hidden" name="_method" value="DELETE">
+                <button type="submit" class="btn btn-danger mr-2">Delete</button>
+          </form>
+
+        </div>
+
+      </td>
+
+      
     </tr>
     {{/each}}
   </tbody>

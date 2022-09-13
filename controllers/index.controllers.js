@@ -37,33 +37,117 @@ export function renderProdutForm (req, res){
 export async function createNewProduct (req, res){
     
     try {
-        const { title, price } = req.body;
+        const { categoria, 
+            nombre, 
+            precio,
+            descuento,
+            descripcion1,
+            descripcion2,
+            descripcion3,
+            descripcion4,
+            descripcion5 } = req.body;
     
-        console.log(req.files) 
+        // console.log(req.files) 
     
         console.log(req.body)
     
         const products = new Product ({
-            title, 
-            price,
+            categoria,
+            nombre, 
+            precio,
+            descuento,
+            descripcion1,
+            descripcion2,
+            descripcion3,
+            descripcion4,
+            descripcion5
         })
     
-        if (req.files?.image) {
-            const uploadCloudinary = await uploadImage(req.files.image.tempFilePath)
-    
-            products.image = {
+        if (req.files?.imagen1) {
+            const uploadCloudinary = await uploadImage(req.files.imagen1.tempFilePath)
+            products.imagen1 = {
                 public_id: uploadCloudinary.public_id,
                 secure_url: uploadCloudinary.secure_url
             }
-    
-            await fs.unlink(req.files.image.tempFilePath)
-    
+            await fs.unlink(req.files.imagen1.tempFilePath)  
+        }
+        if (req.files?.imagen2) {
+            const uploadCloudinary = await uploadImage(req.files.imagen2.tempFilePath)
+            products.imagen2 = {
+                public_id: uploadCloudinary.public_id,
+                secure_url: uploadCloudinary.secure_url
+            }
+            await fs.unlink(req.files.imagen2.tempFilePath)  
+        }
+        if (req.files?.imagen3) {
+            const uploadCloudinary = await uploadImage(req.files.imagen3.tempFilePath)
+            products.imagen3 = {
+                public_id: uploadCloudinary.public_id,
+                secure_url: uploadCloudinary.secure_url
+            }
+            await fs.unlink(req.files.imagen3.tempFilePath)  
+        }
+        if (req.files?.imagen4) {
+            const uploadCloudinary = await uploadImage(req.files.imagen4.tempFilePath)
+            products.imagen4 = {
+                public_id: uploadCloudinary.public_id,
+                secure_url: uploadCloudinary.secure_url
+            }
+            await fs.unlink(req.files.imagen4.tempFilePath)  
+        }
+        if (req.files?.imagen5) {
+            const uploadCloudinary = await uploadImage(req.files.imagen5.tempFilePath)
+            products.imagen5 = {
+                public_id: uploadCloudinary.public_id,
+                secure_url: uploadCloudinary.secure_url
+            }
+            await fs.unlink(req.files.imagen5.tempFilePath)  
+        }
+        if (req.files?.imgDescripcion1) {
+            const uploadCloudinary = await uploadImage(req.files.imgDescripcion1.tempFilePath)
+            products.imgDescripcion1 = {
+                public_id: uploadCloudinary.public_id,
+                secure_url: uploadCloudinary.secure_url
+            }
+            await fs.unlink(req.files.imgDescripcion1.tempFilePath)  
+        }
+        if (req.files?.imgDescripcion2) {
+            const uploadCloudinary = await uploadImage(req.files.imgDescripcion2.tempFilePath)
+            products.imgDescripcion2 = {
+                public_id: uploadCloudinary.public_id,
+                secure_url: uploadCloudinary.secure_url
+            }
+            await fs.unlink(req.files.imgDescripcion2.tempFilePath)  
+        }
+        if (req.files?.imgDescripcion3) {
+            const uploadCloudinary = await uploadImage(req.files.imgDescripcion3.tempFilePath)
+            products.imgDescripcion3 = {
+                public_id: uploadCloudinary.public_id,
+                secure_url: uploadCloudinary.secure_url
+            }
+            await fs.unlink(req.files.imgDescripcion3.tempFilePath)  
+        }
+        if (req.files?.imgDescripcion4) {
+            const uploadCloudinary = await uploadImage(req.files.imgDescripcion4.tempFilePath)
+            products.imgDescripcion4 = {
+                public_id: uploadCloudinary.public_id,
+                secure_url: uploadCloudinary.secure_url
+            }
+            await fs.unlink(req.files.imgDescripcion4.tempFilePath)  
+        }
+        if (req.files?.imgDescripcion5) {
+            const uploadCloudinary = await uploadImage(req.files.imgDescripcion5.tempFilePath)
+            products.imgDescripcion5 = {
+                public_id: uploadCloudinary.public_id,
+                secure_url: uploadCloudinary.secure_url
+            }
+            await fs.unlink(req.files.imgDescripcion5.tempFilePath)  
         }
     
         await products.save();
     
-        console.log(products.image.secure_url)
-        console.log(products.image)
+        // console.log(products.image.secure_url)
+        // console.log(products.image)
     
         res.redirect("/products")
         
@@ -82,7 +166,7 @@ export async function renderProducts (req, res){
         // res.render("home")
         // res.send("showing products")
         const product = await Product.find().lean();
-        
+
         res.render("Home", {product})
         
     } catch (error) {
@@ -97,9 +181,9 @@ export async function renderEditForm (req, res){
     
     try {
         const products = await Product.findById(req.params.id).lean()
-        console.log(products.image)
-        console.log(products)
-        console.log(req.files, 200)
+        // console.log(products.image)
+        // console.log(products)
+        // console.log(req.files, 200)
         res.render("edit_form", {products})
         
     } catch (error) {
@@ -150,6 +234,12 @@ export async function updateProduct (req, res){
     }
 }
 
+//Update images
+export async function updateImgProduct (req, res){
+    
+}
+
+
 //delete products
 export async function deleteProducts (req, res){
 
@@ -159,8 +249,44 @@ export async function deleteProducts (req, res){
         if (!eraser) return res.status(400).json({
             "message": "Product does not exists"
           })
-        if (eraser.image?.public_id) {
-            const result = await deleteImage(eraser.image.public_id)
+        if (eraser.imagen1?.public_id) {
+            const result = await deleteImage(eraser.imagen1.public_id)
+            // console.log(result)
+        }
+        if (eraser.imagen2?.public_id) {
+            const result = await deleteImage(eraser.imagen2.public_id)
+            // console.log(result)
+        }
+        if (eraser.imagen3?.public_id) {
+            const result = await deleteImage(eraser.imagen3.public_id)
+            // console.log(result)
+        }
+        if (eraser.imagen4?.public_id) {
+            const result = await deleteImage(eraser.imagen4.public_id)
+            // console.log(result)
+        }
+        if (eraser.imagen5?.public_id) {
+            const result = await deleteImage(eraser.imagen5.public_id)
+            // console.log(result)
+        }
+        if (eraser.imgDescripcion1?.public_id) {
+            const result = await deleteImage(eraser.imgDescripcion1.public_id)
+            // console.log(result)
+        }
+        if (eraser.imgDescripcion2?.public_id) {
+            const result = await deleteImage(eraser.imgDescripcion2.public_id)
+            // console.log(result)
+        }
+        if (eraser.imgDescripcion3?.public_id) {
+            const result = await deleteImage(eraser.imgDescripcion3.public_id)
+            // console.log(result)
+        }
+        if (eraser.imgDescripcion4?.public_id) {
+            const result = await deleteImage(eraser.imgDescripcion4.public_id)
+            // console.log(result)
+        }
+        if (eraser.imgDescripcion5?.public_id) {
+            const result = await deleteImage(eraser.imgDescripcion5.public_id)
             // console.log(result)
         }
     
