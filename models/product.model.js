@@ -1,22 +1,24 @@
 import mongoose from "mongoose"
 // import { model } from "mongoose"
 
-const productSchema = mongoose.Schema({
-    categoria: {
+
+const productSchema2 = new mongoose.Schema({
+    categoria:{
         type: String,
         trim: true,
-        require: true,
-        unique: true
+        require: true
     },
     nombre: {
         type: String,
         trim: true,
         require: true,
-        unique: true
+        unique: false
     },
     precio: {
         type: Number,
         trim: true,
+        unique: false,
+        sparse:true
     },
     imagen1: {
         public_id: String,
@@ -41,11 +43,14 @@ const productSchema = mongoose.Schema({
     descuento: {
         type: Number,
         trim: true,
+        unique: false,
+        sparse:true
     },
     descripcion1: {
         type: String,
         trim: true,
-        unique: true
+        unique: false,
+        sparse:true
     },
     imgDescripcion1: {
         public_id: String,
@@ -54,7 +59,8 @@ const productSchema = mongoose.Schema({
     descripcion2: {
         type: String,
         trim: true,
-        unique: true
+        unique: false,
+        sparse:true
     },
     imgDescripcion2: {
         public_id: String,
@@ -63,7 +69,8 @@ const productSchema = mongoose.Schema({
     descripcion3: {
         type: String,
         trim: true,
-        unique: true
+        unique: false,
+        sparse:true
     },
     imgDescripcion3: {
         public_id: String,
@@ -72,7 +79,8 @@ const productSchema = mongoose.Schema({
     descripcion4: {
         type: String,
         trim: true,
-        unique: true
+        unique: false,
+        sparse:true
     },
     imgDescripcion4: {
         public_id: String,
@@ -81,7 +89,8 @@ const productSchema = mongoose.Schema({
     descripcion5: {
         type: String,
         trim: true,
-        unique: true
+        unique: false,
+        sparse:true
     },
     imgDescripcion5: {
         public_id: String,
@@ -91,7 +100,7 @@ const productSchema = mongoose.Schema({
     timestamps: true
 })
 
-export default mongoose.model("Product", productSchema, "ProductosPruebaCrud")
+export default mongoose.model("Product", productSchema2)
 
 
 

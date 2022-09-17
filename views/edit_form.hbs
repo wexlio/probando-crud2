@@ -39,131 +39,191 @@
     <h1>Edit Productest</h1>
 </div>
  
-<form action="/products/edit/{{products._id}}?_method=PUT" method="POST" enctype="multipart/form-data">
+<form action="/products/edit-style/{{products._id}}?_method=PUT" method="POST" enctype="multipart/form-data">
     <input type="hidden" name="_method" value="PUT">
+    <div class="row">
+            <div class="col-md-4 container">
+                <div class="container m-auto">
 
-    <div class="col-md-6 container">
-        <div class="container m-auto">
+                    <div class="form-row">
 
-            <div class="form-row">
+                        <div class="col-md-12 mb-3">
+                            <label for="validationServer02">Categoria</label>
+                            <input type="text" class="form-control" id="validationServer02" placeholder="Coloque el nombre del producto aquí..." value="{{products.categoria}}" name="categoria" required>
+                        </div>
 
-                <div class="col-md-12 mb-3">
-                    <label for="validationServer02">Categoria</label>
-                    <input type="text" class="form-control" id="validationServer02" placeholder="Coloque el nombre del producto aquí..." value="{{products.categoria}}" name="categoria" required>
-                </div>
+                        <div class="col-md-12 mb-3">
+                            <label for="validationServer02">Nombre</label>
+                            <input type="text" class="form-control" id="validationServer02" placeholder="Coloque el nombre del producto aquí..." value="{{products.nombre}}" name="nombre" required>
+                        </div>
 
-                <div class="col-md-12 mb-3">
-                    <label for="validationServer02">Nombre</label>
-                    <input type="text" class="form-control" id="validationServer02" placeholder="Coloque el nombre del producto aquí..." value="{{products.nombre}}" name="nombre" required>
-                </div>
+                        <div class="col-md-12 mb-3">
+                            <label for="validationServer02">Precio</label>
+                            <input type="number" class="form-control" id="validationServer02" placeholder="Coloque el precio del producto aquí..." value="{{products.precio}}" name="precio" required>
+                        </div>
 
-                <div class="col-md-12 mb-3">
-                    <label for="validationServer02">Precio</label>
-                    <input type="number" class="form-control" id="validationServer02" placeholder="Coloque el precio del producto aquí..." value="{{products.precio}}" name="precio" required>
-                </div>
+                        <div class="d-flex justify-content-center"> 
 
-        
-                <div class="input-group mt-3">
-                    <label for="validationServer02">Upload Image1</label>
-                    <div class="custom-file">
-                    <input type="file" name="imagen1" class="custom-file-input" id="inputGroupFile05">
-                    <label for="inputGroupFile05" class="custom-file-label ml-2 mr-2">Click aquí para elegir archivo</label>
-                    </div>
-                </div>
-                <div class="input-group mt-3">
-                    <label for="validationServer02">Upload Image2</label>
-                    <div class="custom-file">
-                    <input type="file" name="imagen2" class="custom-file-input" id="inputGroupFile05">
-                    <label for="inputGroupFile05" class="custom-file-label ml-2 mr-2">Click aquí para elegir archivo</label>
-                    </div>
-                </div>
-                <div class="input-group mt-3">
-                    <label for="validationServer02">Upload Image3</label>
-                    <div class="custom-file">
-                    <input type="file" name="imagen3" class="custom-file-input" id="inputGroupFile05">
-                    <label for="inputGroupFile05" class="custom-file-label ml-2 mr-2">Click aquí para elegir archivo</label>
-                    </div>
-                </div>
-                <div class="input-group mt-3">
-                    <label for="validationServer02">Upload Image4</label>
-                    <div class="custom-file">
-                    <input type="file" name="imagen4" class="custom-file-input" id="inputGroupFile05">
-                    <label for="inputGroupFile05" class="custom-file-label ml-2 mr-2">Click aquí para elegir archivo</label>
-                    </div>
-                </div>
-                <div class="input-group mt-3">
-                    <label for="validationServer02">Upload Image5</label>
-                    <div class="custom-file">
-                    <input type="file" name="imagen5" class="custom-file-input" id="inputGroupFile05">
-                    <label for="inputGroupFile05" class="custom-file-label ml-2 mr-2">Click aquí para elegir archivo</label>
-                    </div>
-                </div>
+                            <div class="form-group">
+                                <label for="formFile" class="form-label mt-4">Upload Image1</label>
+                                <input name="imagen1" class="form-control" type="file" id="formFile">
+                            </div>
 
-                <div class="col-md-12 mb-3">
-                    <label for="validationServer02">Descuento</label>
-                    <input type="number" class="form-control" id="validationServer02" placeholder="Coloque el porcetaje de descuento del producto aquí..." value="{{products.descuento}}" name="descuento">
-                </div>
+                            <div class="form-group d-flex justify-content-center align-items-center ml-3 mt-5" style="object-fit: cover, margin-left: 10px">
+                                <img src="{{products.imagen1.secure_url}}" width="50" height="50" style="object-fit: cover">
+                            </div>
 
-                <div class="col-md-12 mb-3">
-                    <label for="validationServer02">Descripcion1</label>
-                    <input type="text" class="form-control" id="validationServer02" placeholder="Coloque la descripción1 del producto aquí..." value="{{products.descripcion1}}" name="descripcion1">
-                </div>
-                <div class="input-group mt-3">
-                    <label for="validationServer02">Upload ImgDescripcion1</label>
-                    <div class="custom-file">
-                    <input type="file" name="imgDescripcion1" class="custom-file-input" id="inputGroupFile05">
-                    <label for="inputGroupFile05" class="custom-file-label ml-2 mr-2">Click aquí para elegir archivo</label>
-                    </div>
-                </div>
-                <div class="col-md-12 mb-3">
-                    <label for="validationServer02">Descripcion2</label>
-                    <input type="text" class="form-control" id="validationServer02" placeholder="Coloque la descripción2 del producto aquí..." value="{{products.descripcion2}}" name="descripcion2">
-                </div>
-                <div class="input-group mt-3">
-                    <label for="validationServer02">Upload ImgDescripcion2</label>
-                    <div class="custom-file">
-                    <input type="file" name="imgDescripcion2" class="custom-file-input" id="inputGroupFile05">
-                    <label for="inputGroupFile05" class="custom-file-label ml-2 mr-2">Click aquí para elegir archivo</label>
-                    </div>
-                </div>
-                <div class="col-md-12 mb-3">
-                    <label for="validationServer02">Descripcion3</label>
-                    <input type="text" class="form-control" id="validationServer02" placeholder="Coloque la descripción3 del producto aquí..." value="{{products.descripcion3}}" name="descripcion3">
-                </div>
-                <div class="input-group mt-3">
-                    <label for="validationServer02">Upload ImgDescripcion3</label>
-                    <div class="custom-file">
-                    <input type="file" name="imgDescripcion3" class="custom-file-input" id="inputGroupFile05">
-                    <label for="inputGroupFile05" class="custom-file-label ml-2 mr-2">Click aquí para elegir archivo</label>
-                    </div>
-                </div>
-                <div class="col-md-12 mb-3">
-                    <label for="validationServer02">Descripcion4</label>
-                    <input type="text" class="form-control" id="validationServer02" placeholder="Coloque la descripción4 del producto aquí..." value="{{products.descripcion4}}" name="descripcion4">
-                </div>
-                <div class="input-group mt-3">
-                    <label for="validationServer02">Upload ImgDescripcion4</label>
-                    <div class="custom-file">
-                    <input type="file" name="imgDescripcion4" class="custom-file-input" id="inputGroupFile05">
-                    <label for="inputGroupFile05" class="custom-file-label ml-2 mr-2">Click aquí para elegir archivo</label>
-                    </div>
-                </div>
-                <div class="col-md-12 mb-3">
-                    <label for="validationServer02">Descripcion5</label>
-                    <input type="text" class="form-control" id="validationServer02" placeholder="Coloque la descripción5 del producto aquí..." value="{{products.descripcion5}}" name="descripcion5">
-                </div>
-                <div class="input-group mt-3">
-                    <label for="validationServer02">Upload ImgDescripcion5</label>
-                    <div class="custom-file">
-                    <input type="file" name="imgDescripcion5" class="custom-file-input" id="inputGroupFile05">
-                    <label for="inputGroupFile05" class="custom-file-label ml-2 mr-2">Click aquí para elegir archivo</label>
-                    </div>
-                </div>
+                        </div>
+                        <div class="d-flex justify-content-center"> 
 
+                            <div class="form-group">
+                                <label for="formFile" class="form-label mt-4">Upload Image2</label>
+                                <input name="imagen2" class="form-control" type="file" id="formFile">
+                            </div>
+
+                            <div class="form-group d-flex justify-content-center align-items-center ml-3 mt-5" style="object-fit: cover, margin-left: 10px">
+                                <img src="{{products.imagen2.secure_url}}" width="50" height="50" style="object-fit: cover">
+                            </div>
+
+                        </div>
+                        <div class="d-flex justify-content-center"> 
+
+                            <div class="form-group">
+                                <label for="formFile" class="form-label mt-4">Upload Image3</label>
+                                <input name="imagen3" class="form-control" type="file" id="formFile">
+                            </div>
+
+                            <div class="form-group d-flex justify-content-center align-items-center ml-3 mt-5" style="object-fit: cover, margin-left: 10px">
+                                <img src="{{products.imagen3.secure_url}}" width="50" height="50" style="object-fit: cover">
+                            </div>
+
+                        </div>
+                        <div class="d-flex justify-content-center"> 
+
+                            <div class="form-group">
+                                <label for="formFile" class="form-label mt-4">Upload Image4</label>
+                                <input name="imagen4" class="form-control" type="file" id="formFile">
+                            </div>
+
+                            <div class="form-group d-flex justify-content-center align-items-center ml-3 mt-5" style="object-fit: cover, margin-left: 10px">
+                                <img src="{{products.imagen4.secure_url}}" width="50" height="50" style="object-fit: cover">
+                            </div>
+
+                        </div>
+                        <div class="d-flex justify-content-center"> 
+
+                            <div class="form-group">
+                                <label for="formFile" class="form-label mt-4">Upload Image5</label>
+                                <input name="imagen5" class="form-control" type="file" id="formFile">
+                            </div>
+
+                            <div class="form-group d-flex justify-content-center align-items-center ml-3 mt-5" style="object-fit: cover, margin-left: 10px">
+                                <img src="{{products.imagen5.secure_url}}" width="50" height="50" style="object-fit: cover">
+                            </div>
+
+                        </div>
+
+                        <div class="col-md-12 mb-3">
+                            <label for="validationServer02">Descuento</label>
+                            <input type="number" step="0.1" min="0" max="1" class="form-control" id="validationServer02" placeholder="Coloque el porcetaje de descuento del producto aquí..." value="{{products.descuento}}" name="descuento">
+                        </div>
+
+                    </div>
+
+
+                    
+                        
+
+                </div>
             </div>
-            
-                <button class="btn btn-primary mt-3" type="submit">Enviar</button>
 
-        </div>
+            <div class="col-md-8">
+                    <div>
+                        <div class="col-md-12 mb-3">
+                            <label for="validationServer02">Descripcion1</label>
+                            <textarea type="text" class="form-control" id="validationServer02" placeholder="Coloque la descripción1 del producto aquí..." name="descripcion1">{{products.descripcion1}}</textarea>
+                        </div>
+                        <div class="d-flex justify-content-center"> 
+
+                            <div class="form-group">
+                                <label for="formFile" class="form-label mt-4">Upload ImgDescripcion1</label>
+                                <input  name="imgDescripcion1" class="form-control" type="file" id="formFile">
+                            </div>
+
+                            <div class="form-group d-flex justify-content-center align-items-center ml-3 mt-5" style="object-fit: cover, margin-left: 10px">
+                                <img src="{{products.imgDescripcion1.secure_url}}" width="50" height="50" style="object-fit: cover">
+                            </div>
+
+                        </div>
+                        <div class="col-md-12 mb-3">
+                            <label for="validationServer02">Descripcion2</label>
+                            <textarea type="text" class="form-control" id="validationServer02" placeholder="Coloque la descripción1 del producto aquí..." name="descripcion2">{{products.descripcion2}}</textarea>
+                        </div>
+                        <div class="d-flex justify-content-center"> 
+
+                            <div class="form-group">
+                                <label for="formFile" class="form-label mt-4">Upload ImgDescripcion2</label>
+                                <input  name="imgDescripcion2" class="form-control" type="file" id="formFile">
+                            </div>
+
+                            <div class="form-group d-flex justify-content-center align-items-center ml-3 mt-5" style="object-fit: cover, margin-left: 10px">
+                                <img src="{{products.imgDescripcion2.secure_url}}" width="50" height="50" style="object-fit: cover">
+                            </div>
+
+                        </div>
+                        <div class="col-md-12 mb-3">
+                            <label for="validationServer02">Descripcion3</label>
+                            <textarea type="text" class="form-control" id="validationServer02" placeholder="Coloque la descripción1 del producto aquí..." name="descripcion3">{{products.descripcion3}}</textarea>
+                        </div>
+                        <div class="d-flex justify-content-center"> 
+
+                            <div class="form-group">
+                                <label for="formFile" class="form-label mt-4">Upload ImgDescripcion3</label>
+                                <input  name="imgDescripcion3" class="form-control" type="file" id="formFile">
+                            </div>
+
+                            <div class="form-group d-flex justify-content-center align-items-center ml-3 mt-5" style="object-fit: cover, margin-left: 10px">
+                                <img src="{{products.imgDescripcion3.secure_url}}" width="50" height="50" style="object-fit: cover">
+                            </div>
+
+                        </div>
+                        <div class="col-md-12 mb-3">
+                            <label for="validationServer02">Descripcion4</label>
+                            <textarea type="text" class="form-control" id="validationServer02" placeholder="Coloque la descripción1 del producto aquí..." name="descripcion4">{{products.descripcion4}}</textarea>
+                        </div>
+                        <div class="d-flex justify-content-center"> 
+
+                            <div class="form-group">
+                                <label for="formFile" class="form-label mt-4">Upload ImgDescripcion4</label>
+                                <input  name="imgDescripcion4" class="form-control" type="file" id="formFile">
+                            </div>
+
+                            <div class="form-group d-flex justify-content-center align-items-center ml-3 mt-5" style="object-fit: cover, margin-left: 10px">
+                                <img src="{{products.imgDescripcion4.secure_url}}" width="50" height="50" style="object-fit: cover">
+                            </div>
+
+                        </div>
+                        <div class="col-md-12 mb-3">
+                            <label for="validationServer02">Descripcion5</label>
+                            <textarea type="text" class="form-control" id="validationServer02" placeholder="Coloque la descripción1 del producto aquí..." name="descripcion5">{{products.descripcion5}}</textarea>
+                        </div>
+                        <div class="d-flex justify-content-center"> 
+
+                            <div class="form-group">
+                                <label for="formFile" class="form-label mt-4">Upload ImgDescripcion5</label>
+                                <input  name="imgDescripcion5" class="form-control" type="file" id="formFile">
+                            </div>
+
+                            <div class="form-group d-flex justify-content-center align-items-center ml-3 mt-5" style="object-fit: cover, margin-left: 10px">
+                                <img src="{{products.imgDescripcion5.secure_url}}" width="50" height="50" style="object-fit: cover">
+                            </div>
+
+                        </div>
+                        
+                    </div>
+            </div>
+
     </div>
+    <button class="btn btn-lg btn-primary col-md-12" type="submit">Enviar actualizacion de datos</button>
+    {{!-- <button class="btn btn-primary mt-3" type="submit">Enviar</button> --}}
 </form>
