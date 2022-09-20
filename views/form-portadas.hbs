@@ -1,0 +1,27 @@
+<div class="text-center container pb-5">
+    <h1>Adds Portadas</h1>
+</div>
+ 
+<form action="/portadas-style/add" method="POST" enctype="multipart/form-data">
+
+    <div class="col-md-8 container">
+        <div class="container m-auto">
+
+            <div class="form-row">
+
+                <div class="col-md-12 mb-3">
+                    <label for="validationServer02">Texto Portada1</label>
+                    <input type="text" class="form-control" id="validationServer02" placeholder="Coloque el texto de la portada aquí..." name="textoPortada1" required>
+                </div>
+                <div class="form-group">
+                    <label for="formFile" class="form-label">Upload Portada1</label>
+                    <input name="imgPortada1" class="form-control mb-4" type="file" id="formFile">
+                </div>
+             
+            </div>
+
+            <button class="col-md-12 btn btn-primary mt-3" type="submit"><b>AGREGAR PORTADAS</b></button>
+            
+        </div>
+    </div>
+</form>

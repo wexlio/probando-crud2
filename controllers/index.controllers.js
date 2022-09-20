@@ -1,5 +1,6 @@
 
 import Product from "../models/product.model.js"
+import Portada from "../models/portada.model.js"
 import {uploadImage, deleteImage, updateImage} from "../utils/cloudinary.js"
 import fs from "fs-extra"
 // import {v2 as cloudinary} from "../utils/cloudinary.js"
@@ -10,7 +11,10 @@ import methodOverride from "method-override"
 export async function renderJsonProducts (req, res){
     try {
         const products = await Product.find()
+        const portadas = await Portada.find()
         res.send(products)
+
+        // res.send(portadas)
         
     } catch (error) {
         return res.status(500).json({

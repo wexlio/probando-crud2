@@ -3,6 +3,19 @@ import {uploadImage, deleteImage} from "../utils/cloudinary.js"
 import fs from "fs-extra"
 
 
+export async function renderJsonProducts2 (req, res){
+    try {
+        const products = await Product.find()
+        res.render("json-api-productos", {products})
+        
+    } catch (error) {
+        return res.status(500).json({
+            "message": error.message
+          })
+    } 
+}
+
+
 //new products
 export function renderProdutForm2 (req, res){
     try {
