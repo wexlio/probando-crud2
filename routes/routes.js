@@ -2,6 +2,8 @@ import { Router } from "express";
 import { renderProdutForm, createNewProduct, renderProducts, renderEditForm, updateProduct, deleteProducts, renderJsonProducts, updateImgProduct } from "../controllers/index.controllers.js";
 import { renderProdutForm2, createNewProduct2, renderProducts2, renderJsonProducts2, renderEditForm2, updateProduct2, deleteProducts2 } from "../controllers/products.controllers.js"
 import { renderJsonPortadas, renderPortadasForm, createNewPortada, renderPortadas, renderEditPortadaForm, updatePortadas, deletePortadas } from "../controllers/portadas.controllers.js"
+import { renderCategoriasForm, createNewCategoria, renderCategorias, renderEditCategoriasForm, updateCategorias, deleteCategorias } from "../controllers/categorias.controllers.js"
+import { renderConfigsForm, createNewConfigs, renderConfigs, renderEditConfigsForm, updateConfigs, deleteConfigs } from "../controllers/configs.controllers.js"
 
 const router = Router();
 
@@ -78,6 +80,47 @@ router.put("/portadas/edit-style/:id", updatePortadas)
 // //delete products
 router.delete("/portadas/delete-style/:id", deletePortadas)
 
+//ROUTES OF CATEGORIAS
+
+// router.get("/api3", renderJsonCategorias)
+//new products
+router.get("/categorias-style/add", renderCategoriasForm)
+
+router.post("/categorias-style/add", createNewCategoria)
+
+//get all product(s)
+router.get("/categorias-style", renderCategorias)
+
+//edit products
+router.get("/categorias/edit-style/:id", renderEditCategoriasForm)
+
+router.put("/categorias/edit-style/:id", updateCategorias)
+
+// router.put("/products/edit/img-style/:id", updateImgProduct2)
+
+// //delete products
+router.delete("/categorias/delete-style/:id", deleteCategorias)
+
+//ROUTES OF configs
+
+// router.get("/api3", renderJsonCategorias)
+//new configs
+router.get("/configs-style/add", renderConfigsForm)
+
+router.post("/configs-style/add", createNewConfigs)
+
+//get all configs(s)
+router.get("/configs-style", renderConfigs)
+
+//edit configs
+router.get("/configs/edit-style/:id", renderEditConfigsForm)
+
+router.put("/configs/edit-style/:id", updateConfigs)
+
+// router.put("/products/edit/img-style/:id", updateImgProduct2)
+
+// //delete configs
+router.delete("/configs/delete-style/:id", deleteConfigs)
 
 export { router }
 

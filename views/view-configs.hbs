@@ -1,0 +1,74 @@
+<div class="container pb-4 pl-0">
+    <h1>Alls Configs</h1>
+</div>
+{{#if configs}}
+    {{#each configs}}
+        <div class="mb-2 float-right">
+            <a class="btn btn-outline-success d-flex justify-content-center align-items-center" href="/configs/edit-style/{{_id}}">Edits configs</a>
+        </div>
+    {{/each}}
+{{/if}}
+{{#unless configs}}
+    <div class="mb-2 float-right">
+        <a class="btn btn-outline-success d-flex justify-content-center align-items-center" href="/configs-style/add">Edits configs</a>
+    </div>
+{{/unless}}
+<table class="table table-bordered border-primary">
+  <thead>
+    <tr class="bg-success">
+      {{!-- <th class="text-center" scope="col">#</th> --}}
+      <th class="text-center" scope="col">Nombre Tienda</th>
+      <th class="text-center" scope="col">Image Tienda</th>
+      <th class="text-center" scope="col">Slogan</th>
+      <th class="text-center" scope="col">Image Slogan</th>
+      <th class="text-center" scope="col">Color Principal Pagina</th>
+      <th class="text-center" scope="col">Actions</th>
+
+    </tr>
+  </thead>
+  <tbody>
+    {{#each configs}}
+    <tr>
+      {{!-- <th class="text-center" scope="row">{{length}}</th> --}}
+
+      
+
+      <td class="text-center">{{nombreTienda}}</td>
+      <td class="text-center">
+
+        <div class="d-flex justify-content-center"> 
+          <img src="{{imgTienda.secure_url}}" class="rounded-3" width="60" height="60" style="object-fit: cover">
+          {{!-- <a href="{{imagen1.secure_url}}" target="_BLANK" type="button" class="btn btn-success mr-2">View Img1</a> --}}
+
+        </div>
+      </td>
+      <td class="text-center">{{slogan}}</td>
+      <td class="text-center">
+
+        <div class="d-flex justify-content-center"> 
+          <img src="{{imgSlogan.secure_url}}" class="rounded-3" width="60" height="60" style="object-fit: cover">
+          {{!-- <a href="{{imagen1.secure_url}}" target="_BLANK" type="button" class="btn btn-success mr-2">View Img1</a> --}}
+
+        </div>
+      </td>
+      <td class="text-center">
+        <div class="col-md-2 m-auto rounded-3" width="55" height="90" style="color:{{colorPrincipalPagina}}; background: {{colorPrincipalPagina}}">O</div>
+      </td>
+      <td width="30px">
+        <div class="mr-2 d-flex justify-content-center align-items-center">
+          {{!-- <div class="mr-2 d-flex justify-content-center align-items-center">  
+              <a href="/configs/edit-style/{{_id}}" type="button" class="btn btn-outline-warning d-flex justify-content-center align-items-center">Edit Productest<a>
+          </div> --}}
+          <form method="POST" action="/configs/delete-style/{{_id}}?_method=DELETE">
+                <input type="hidden" name="_method" value="DELETE">
+                <button type="submit" class="btn btn-outline-danger">Delete</button>
+          </form>
+
+        </div>
+
+      </td>
+
+    </tr>
+    {{/each}}
+  </tbody>
+</table>

@@ -1,6 +1,8 @@
 
 import Product from "../models/product.model.js"
 import Portada from "../models/portada.model.js"
+import Categoria from "../models/categoria.model.js"
+import Configs from "../models/configs.model.js"
 import {uploadImage, deleteImage, updateImage} from "../utils/cloudinary.js"
 import fs from "fs-extra"
 // import {v2 as cloudinary} from "../utils/cloudinary.js"
@@ -12,7 +14,14 @@ export async function renderJsonProducts (req, res){
     try {
         const products = await Product.find()
         const portadas = await Portada.find()
-        res.send(products)
+        const categorias = await Categoria.find()
+        const configs = await Configs.find()
+        var apiPrincipal = [];
+        apiPrincipal.push(products);
+        apiPrincipal.push(categorias);
+        apiPrincipal.push(portadas);
+        apiPrincipal.push(configs);
+        res.send(apiPrincipal)
 
         // res.send(portadas)
         
@@ -21,7 +30,6 @@ export async function renderJsonProducts (req, res){
             "message": error.message
           })
     }
-
     
 }
 

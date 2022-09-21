@@ -1,0 +1,27 @@
+<div class="text-center container pb-5">
+    <h1>Adds Categorias</h1>
+</div>
+ 
+<form action="/categorias-style/add" method="POST" enctype="multipart/form-data">
+
+    <div class="col-md-8 container">
+        <div class="container m-auto">
+
+            <div class="form-row">
+
+                <div class="col-md-12 mb-3">
+                    <label for="validationServer02">Texto Categoria</label>
+                    <input type="text" class="form-control" id="validationServer02" placeholder="Coloque el texto de la categoria aquí..." name="textoCategoria" required>
+                </div>
+                <div class="form-group">
+                    <label for="formFile" class="form-label">Upload Image Categoria</label>
+                    <input name="imgCategoria" class="form-control mb-4" type="file" id="formFile">
+                </div>
+             
+            </div>
+
+            <button class="col-md-12 btn btn-primary mt-3" type="submit"><b>AGREGAR CATEGORIA</b></button>
+            
+        </div>
+    </div>
+</form>

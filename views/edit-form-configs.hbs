@@ -1,0 +1,55 @@
+<div class="text-center container pb-5">
+    <h1>Edits Configs</h1>
+</div>
+ 
+<form action="/configs/edit-style/{{configs._id}}?_method=PUT" method="POST" enctype="multipart/form-data">
+<input type="hidden" name="_method" value="PUT">
+     <div class="col-md-8 container">
+        <div class="container m-auto">
+
+            <div class="form-row">
+
+                <div class="col-md-12 mb-3">
+                    <label for="validationServer02">Nombre de Tienda</label>
+                    <input type="text" value="{{configs.nombreTienda}}" class="form-control" id="validationServer02" placeholder="Coloque el texto de la categoria aquí..." name="nombreTienda" required>
+                </div>
+                <div class="d-flex justify-content-center"> 
+
+                            <div class="form-group">
+                                <label for="formFile" class="form-label mt-4">Upload Image Tienda</label>
+                                <input name="imgTienda" class="form-control" type="file" id="formFile">
+                            </div>
+
+                            <div class="form-group d-flex justify-content-center align-items-center ml-3 mt-5" style="object-fit: cover, margin-left: 10px">
+                                <img src="{{configs.imgTienda.secure_url}}" width="50" height="50" style="object-fit: cover">
+                            </div>
+
+                </div>
+                <div class="col-md-12 mb-3">
+                    <label for="validationServer02">Slogan de Tienda</label>
+                    <input type="text" value="{{configs.slogan}}" class="form-control" id="validationServer02" placeholder="Coloque el texto de la categoria aquí..." name="slogan">
+                </div>
+                <div class="d-flex justify-content-center"> 
+
+                            <div class="form-group">
+                                <label for="formFile" class="form-label mt-4">Upload Image Slogan</label>
+                                <input name="imgSlogan" class="form-control" type="file" id="formFile">
+                            </div>
+
+                            <div class="form-group d-flex justify-content-center align-items-center ml-3 mt-5" style="object-fit: cover, margin-left: 10px">
+                                <img src="{{configs.imgSlogan.secure_url}}" width="50" height="50" style="object-fit: cover">
+                            </div>
+
+                </div>
+                <div class="col-md-12 mb-3">
+                    <label for="validationServer02">Define el color Principal de la Tienda</label>
+                    <input type="color" value="{{configs.colorPrincipalPagina}}" class="form-control" id="validationServer02" placeholder="Define el colora Principal de la Tienda aquí..." name="colorPrincipalPagina">
+                </div>
+             
+            </div>
+
+            <button class="col-md-12 btn btn-primary mt-3" type="submit"><b>Actualizar Configs de tienda</b></button>
+            
+        </div>
+    </div>
+</form>

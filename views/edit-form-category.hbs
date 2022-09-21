@@ -1,0 +1,35 @@
+<div class="text-center container pb-5">
+    <h1>Edits Categorias</h1>
+</div>
+ 
+<form action="/categorias/edit-style/{{categorias._id}}?_method=PUT" method="POST" enctype="multipart/form-data">
+<input type="hidden" name="_method" value="PUT">
+    <div class="col-md-8 container">
+        <div class="container m-auto">
+
+            <div class="form-row">
+
+                <div class="col-md-12 mb-3">
+                    <label for="validationServer02">Texto Categorias</label>
+                    <input  value="{{categorias.textoCategoria}}" type="text" class="form-control" id="validationServer02" placeholder="Coloque el texto de la categorias aquí..." name="textoCategoria" required>
+                </div>
+                <div class="d-flex justify-content-center"> 
+
+                            <div class="form-group">
+                                <label for="formFile" class="form-label mt-4">Upload Image Categoria</label>
+                                <input name="imgCategoria" class="form-control" type="file" id="formFile">
+                            </div>
+
+                            <div class="form-group d-flex justify-content-center align-items-center ml-3 mt-5" style="object-fit: cover, margin-left: 10px">
+                                <img src="{{categorias.imgCategoria.secure_url}}" width="50" height="50" style="object-fit: cover">
+                            </div>
+
+                </div>
+               
+            </div>
+
+            <button class="col-md-12 btn btn-primary mt-3" type="submit"><b>EDITAR PORTADAS</b></button>
+            
+        </div>
+    </div>
+</form>

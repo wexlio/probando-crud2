@@ -1,0 +1,53 @@
+<div class="container pb-4 pl-0">
+    <h1>Alls Categorias</h1>
+</div>
+
+<div class="btn btn-outline-success mb-2 float-right">
+    <a class="nav-link" href="/categorias-style/add">Add Categoria</a>
+</div>
+<table class="table table-bordered border-primary">
+  <thead>
+    <tr class="bg-success">
+      {{!-- <th class="text-center" scope="col">#</th> --}}
+      <th class="text-center" scope="col">#</th>
+      <th class="text-center" scope="col">Nombre Categoria</th>
+      <th class="text-center" scope="col">Imagen Categoria</th>
+      <th class="text-center" scope="col">Actions</th>
+
+    </tr>
+  </thead>
+  <tbody>
+    {{#each categorias}}
+    <tr>
+      {{!-- <th class="text-center" scope="row">{{length}}</th> --}}
+
+      
+      <td class="text-center">{{@index}}</td>
+      <td class="text-center">{{textoCategoria}}</td>
+      <td class="text-center">
+
+        <div class="d-flex justify-content-center"> 
+          <img src="{{imgCategoria.secure_url}}" class="rounded-3" width="90" height="55" style="object-fit: cover">
+          {{!-- <a href="{{imagen1.secure_url}}" target="_BLANK" type="button" class="btn btn-success mr-2">View Img1</a> --}}
+
+        </div>
+      </td>
+
+      <td width="30px">
+        <div class="mr-2 d-flex justify-content-center align-items-center">
+          <div class="mr-2 d-flex justify-content-center align-items-center">  
+              <a href="/categorias/edit-style/{{_id}}" type="button" class="btn btn-outline-warning d-flex justify-content-center align-items-center">Edit Productest<a>
+          </div>
+          <form method="POST" action="/categorias/delete-style/{{_id}}?_method=DELETE">
+                <input type="hidden" name="_method" value="DELETE">
+                <button type="submit" class="btn btn-outline-danger">Delete</button>
+          </form>
+
+        </div>
+
+      </td>
+
+    </tr>
+    {{/each}}
+  </tbody>
+</table>

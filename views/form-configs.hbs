@@ -1,0 +1,39 @@
+<div class="text-center container pb-5">
+    <h1>Adds Configs</h1>
+</div>
+ 
+<form action="/configs-style/add" method="POST" enctype="multipart/form-data">
+
+    <div class="col-md-8 container">
+        <div class="container m-auto">
+
+            <div class="form-row">
+
+                <div class="col-md-12 mb-3">
+                    <label for="validationServer02">Nombre de Tienda</label>
+                    <input type="text" class="form-control" id="validationServer02" placeholder="Coloque el texto de la categoria aquí..." name="nombreTienda" required>
+                </div>
+                <div class="form-group">
+                    <label for="formFile" class="form-label">Upload Image Tienda</label>
+                    <input name="imgTienda" class="form-control mb-4" type="file" id="formFile">
+                </div>
+                <div class="col-md-12 mb-3">
+                    <label for="validationServer02">Slogan de Tienda</label>
+                    <input type="text" class="form-control" id="validationServer02" placeholder="Coloque el texto de la categoria aquí..." name="slogan">
+                </div>
+                <div class="form-group">
+                    <label for="formFile" class="form-label">Upload Image Slogan</label>
+                    <input name="imgSlogan" class="form-control mb-4" type="file" id="formFile">
+                </div>
+                <div class="col-md-12 mb-3">
+                    <label for="customRange1" class="form-label">Define el color Principal de la Tienda</label>
+                    <input type="color" class="form-range" id="customRange1" placeholder="Define el colora Principal de la Tienda aquí..." name="colorPrincipalPagina">
+                </div>
+             
+            </div>
+
+            <button class="col-md-12 btn btn-primary mt-3" type="submit"><b>Actualizar Configs de tienda</b></button>
+            
+        </div>
+    </div>
+</form>
