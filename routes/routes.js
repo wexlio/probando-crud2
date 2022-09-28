@@ -4,10 +4,11 @@ import { renderProdutForm2, createNewProduct2, renderProducts2, renderJsonProduc
 import { renderJsonPortadas, renderPortadasForm, createNewPortada, renderPortadas, renderEditPortadaForm, updatePortadas, deletePortadas } from "../controllers/portadas.controllers.js"
 import { renderCategoriasForm, createNewCategoria, renderCategorias, renderEditCategoriasForm, updateCategorias, deleteCategorias } from "../controllers/categorias.controllers.js"
 import { renderConfigsForm, createNewConfigs, renderConfigs, renderEditConfigsForm, updateConfigs, deleteConfigs } from "../controllers/configs.controllers.js"
+import { viewPage } from "../controllers/viewPage.controllers.js"
 
 const router = Router();
 
-router.get("/", renderProducts2)
+// router.get("/", renderProducts2)
 
 //new products
 router.get("/products/add", renderProdutForm)
@@ -121,6 +122,13 @@ router.put("/configs/edit-style/:id", updateConfigs)
 
 // //delete configs
 router.delete("/configs/delete-style/:id", deleteConfigs)
+
+
+// View page 
+
+router.get("/", viewPage)
+
+
 
 export { router }
 

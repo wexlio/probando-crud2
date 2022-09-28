@@ -1,0 +1,124 @@
+
+{{#each products}}
+<div class="ecommerce-gallery border border-solid-white mb-5" data-mdb-zoom-effect="true" data-mdb-auto-height="true" style="border-radius: 10px">
+  <div class="row py-3 shadow-5">
+    <div class="col-12 mb-1">
+      <div class="lightbox">
+        <img
+          src="{{imagen1.secure_url}}"
+          alt="Gallery image 1"
+          class="ecommerce-gallery-main-img active w-100"
+          width="150"
+          height="400"
+          style="object-fit: cover"
+        />
+      </div>
+    </div>
+    <div class="col-3 mt-1">
+      <img
+        src="{{imagen2.secure_url}}"
+        data-mdb-img="https://mdbcdn.b-cdn.net/img/Photos/Horizontal/E-commerce/Vertical/14a.webp"
+        alt="Gallery image 1"
+        class="active w-100"
+        width="50"
+        height="100"
+        style="object-fit: cover"
+      />
+    </div>
+    <div class="col-3 mt-1">
+      <img
+        src="{{imagen3.secure_url}}"
+        data-mdb-img="https://mdbcdn.b-cdn.net/img/Photos/Horizontal/E-commerce/Vertical/12a.webp"
+        alt="Gallery image 2"
+        class="w-100"
+        width="50"
+        height="100"
+        style="object-fit: cover"
+      />
+    </div>
+    <div class="col-3 mt-1">
+      <img
+        src="{{imagen4.secure_url}}"
+        data-mdb-img="https://mdbcdn.b-cdn.net/img/Photos/Horizontal/E-commerce/Vertical/13a.webp"
+        alt="Gallery image 3"
+        class="w-100"
+        width="50"
+        height="100"
+        style="object-fit: cover"
+      />
+    </div>
+    <div class="col-3 mt-1">
+      <img
+        src="{{imagen5.secure_url}}"
+        data-mdb-img="https://mdbcdn.b-cdn.net/img/Photos/Horizontal/E-commerce/Vertical/15a.webp"
+        alt="Gallery image 4"
+        class="w-100"
+        width="50"
+        height="100"
+        style="object-fit: cover"
+      />
+    </div>
+  </div>
+  <div class="text-center">
+    {{nombre}}
+  </div>
+  <div class="text-center">
+    S/. {{precio}}.00
+  </div>
+  <div class="text-center">
+    {{descripcion1}}
+  </div>
+  {{#if imgDescripcion1}}
+    <div class="text-center">
+      <img src="{{imgDescripcion1.secure_url}}"
+          width="150"
+          height="250"
+          style="object-fit: cover">
+    </div>
+  {{/if}}
+  <div class="text-center">
+    {{descripcion2}}
+  </div>
+  {{#if imgDescripcion2}}
+    <div class="text-center">
+      <img src="{{imgDescripcion2.secure_url}}"
+          width="150"
+          height="250"
+          style="object-fit: cover">
+    </div>
+  {{/if}}
+  <div class="text-center">
+    {{descripcion3}}
+  </div>
+  {{#if imgDescripcion3}}
+    <div class="text-center">
+      <img src="{{imgDescripcion3.secure_url}}"
+          width="150"
+          height="250"
+          style="object-fit: cover">
+    </div>
+  {{/if}}
+  <div class="text-center">
+    {{descripcion4}}
+  </div>
+  {{#if imgDescripcion4}}
+    <div class="text-center">
+      <img src="{{imgDescripcion4.secure_url}}"
+          width="150"
+          height="250"
+          style="object-fit: cover">
+    </div>
+  {{/if}}
+  <div class="text-center">
+    {{descripcion5}}
+  </div>
+  {{#if imgDescripcion5}}
+    <div class="text-center">
+      <img src="{{imgDescripcion5.secure_url}}"
+          width="150"
+          height="250"
+          style="object-fit: cover">
+    </div>
+  {{/if}}
+</div>
+{{/each}}

@@ -12,7 +12,7 @@ import cors from "cors"
 const app = express();
 
 // Settings
-app.set("port", process.env.PORT || 3000);
+app.set("port", process.env.PORT || 3001);
 // const __dirname = path.resolve();
 app.set('views', './views');
 
